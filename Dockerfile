@@ -22,7 +22,7 @@ RUN mkdir -p /home/apple
 RUN useradd -m -s /bin/bash apple
 
 RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
-RUN apt-get install curl vim wget git sudo zip unzip apt-transport-https screen lsb-release ca-certificates build-essential automake python python3 python3-pip -y
+RUN apt-get install curl npm vim wget git sudo zip unzip apt-transport-https screen lsb-release ca-certificates build-essential automake python python3 python3-pip -y
 
 #deluged
 #deluged
