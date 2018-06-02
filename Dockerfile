@@ -7,8 +7,6 @@ RUN apt-get install -y git
 RUN git clone https://github.com/jaskon139/ssh_and_ss.git /ssh_and_ss
 RUN git clone https://github.com/buildkit-io/bktty.git /bktty 
 
-RUN cp /ssh_and_ss/entrypointqemu.sh /usr/local/bin/entrypointqemu.sh && chmod +x /usr/local/bin/entrypointqemu.sh && chmod 777 /usr/local/bin/entrypointqemu.sh
-
 RUN apt-get install -y -qq software-properties-common python-software-properties module-init-tools
 RUN apt-get install -y shadowsocks-libev net-tools grep 
 RUN add-apt-repository -y ppa:alessandro-strada/ppa 2>&1 > /dev/null
@@ -31,5 +29,9 @@ RUN apt-get install curl vim wget git sudo zip unzip apt-transport-https screen 
 RUN apt-get install -y deluged deluge-web
 RUN mkdir -p /content/delugeconf
 RUN cat /ssh_and_ss/mikimg/* >> /ssh_and_ss/mikimg/fedora.img
+
+ADD entryentry.sh 
+
+RUN mv entryentry.sh /usr/local/bin/entrypointqemu.sh && chmod +x /usr/local/bin/entrypointqemu.sh && chmod 777 /usr/local/bin/entrypointqemu.sh
 
 CMD /usr/local/bin/entrypointqemu.sh
