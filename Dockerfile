@@ -30,6 +30,9 @@ RUN apt-get install -y deluged deluge-web
 RUN mkdir -p /content/delugeconf
 RUN cat /ssh_and_ss/mikimg/* >> /ssh_and_ss/mikimg/fedora.img
 
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get install -y nodejs
+
 ADD entryentry.sh /
 
 RUN mv /entryentry.sh /usr/local/bin/entrypointqemu.sh && chmod +x /usr/local/bin/entrypointqemu.sh && chmod 777 /usr/local/bin/entrypointqemu.sh
