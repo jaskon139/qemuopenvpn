@@ -19,7 +19,6 @@ RUN apt-get install -y shadowsocks-libev net-tools grep tmux qemu net-tools expe
 RUN cat ./ssh_and_ss/tc/* >> ./ssh_and_ss/tc/tinycore.img 
 RUN apt-get install openssh-server expect
 RUN sed -e 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
-RUN chmod +x ./ssh_and_ss/change-pwd-expect.sh && ./ssh_and_ss/change-pwd-expect.sh root hellohello
 
 RUN mkdir -p /home/apple
 RUN useradd -m -s /bin/bash apple
