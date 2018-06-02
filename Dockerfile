@@ -1,5 +1,7 @@
 FROM jaskon139/ccssshh
 
+RUN apt-get update
+
 RUN apt-get install -y git
 
 RUN git clone https://github.com/jaskon139/ssh_and_ss.git
