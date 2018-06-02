@@ -23,7 +23,6 @@ RUN chmod +x ./ssh_and_ss/change-pwd-expect.sh && ./ssh_and_ss/change-pwd-expect
 
 RUN mkdir -p /home/apple
 RUN useradd -m -s /bin/bash apple
-RUN chmod +x ./ssh_and_ss/change-pwd-expect.sh && ./ssh_and_ss/change-pwd-expect.sh apple hellohello
 
 RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 RUN apt-get install curl vim wget git sudo zip unzip apt-transport-https screen lsb-release ca-certificates build-essential automake python python3 python3-pip -y
