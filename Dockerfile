@@ -1,4 +1,4 @@
-FROM freeflyer/wetty
+FROM krishnasrinivas/wetty
 
 RUN apk add qemu git
 
