@@ -1,6 +1,6 @@
 FROM freeflyer/wetty
 
-RUN apk add qemu
+RUN apk add qemu git
 
 WORKDIR /app
 
