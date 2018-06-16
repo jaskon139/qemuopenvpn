@@ -1,5 +1,5 @@
 FROM freeflyer/wetty
 
-RUN apk install -y qemu
+RUN apk add qemu
 
 CMD ["bin/entrypoint.sh"]
