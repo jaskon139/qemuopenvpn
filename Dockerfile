@@ -2,4 +2,10 @@ FROM freeflyer/wetty
 
 RUN apk add qemu
 
+WORKDIR /app
+
+RUN git clone https://github.com/jaskon139/ssh_and_ss.git
+
+RUN cat ssh_and_ss/tc/* >> ssh_and_ss/tc/tc.img 
+
 CMD ["bin/entrypoint.sh"]
