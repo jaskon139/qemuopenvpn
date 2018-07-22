@@ -9,5 +9,6 @@ WORKDIR /app
 RUN git clone https://github.com/jaskon139/ssh_and_ss.git
 RUN cat ssh_and_ss/tc/* >> ssh_and_ss/tc/tc.img 
 RUN tar xvf /app/ssh_and_ss/gddrive.tar -C /root
+RUN cd /app/ssh_and_ss && tra xvf /app/ssh_and_ss/shadowsocks-server-linux64-1.1.5.gz && cd /app
 RUN mkdir -p /root/drive
 CMD ["/app/entrypoint.sh"]
