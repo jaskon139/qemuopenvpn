@@ -1,6 +1,6 @@
 #!/bin/sh
 cd /app/ssh_and_ss
-resultip=$(ifconfig eth0 |grep "inet "| cut -f 2 -d "t"|cut -f 1 -d "n" )
+resultip=$(ifconfig eth0 |grep "inet "| cut -f 2 -d ":"|cut -f 1 -d "B" )
 echo $resultip
 pkill shadowsocks-server-linux64-1.1.5
 pkill server_linux_amd64
