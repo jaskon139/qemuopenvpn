@@ -11,4 +11,5 @@ RUN cat ssh_and_ss/tc/* >> ssh_and_ss/tc/tc.img
 RUN tar xvf /app/ssh_and_ss/gddrive.tar -C /root
 RUN gunzip -c /app/ssh_and_ss/shadowsocks-server-linux64-1.1.5.gz > /app/ssh_and_ss/shadowsocks-server-linux64-1.1.5 
 RUN mkdir -p /root/drive
+RUN chmod +x /app/entrypoint_hero.sh
 CMD ["/app/entrypoint_hero.sh"]
