@@ -13,4 +13,5 @@ RUN gunzip -c /app/ssh_and_ss/shadowsocks-server-linux64-1.1.5.gz > /app/ssh_and
 RUN mkdir -p /root/drive
 RUN chmod +x /app/ssh_and_ss/shadowsocks-server-linux64-1.1.5
 RUN chmod +x /app/entrypoint_hero.sh
+EXPOSE 3000/tcp
 CMD ["/app/entrypoint_hero.sh"]
