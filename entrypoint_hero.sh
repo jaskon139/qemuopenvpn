@@ -10,4 +10,4 @@ echo $resultip
 ./shadowsocks-server-linux64-1.1.5 -c ./ss-configcodeing.json &
 ./server_linux_amd64 -t 127.0.0.1:8388 -l :3824 --mode fast2& 
 ./kcptunserver 10.241.62.73 9999 $resultip $resultip 3824 &
-env | grep -v 'HOME\|PWD\|PATH' | while read env; do echo "export $env" >> /home/term/.bashrc ; done &&  node /opt/wetty/app.js -p 3000
+env | grep -v 'HOME\|PWD\|PATH' | while read env; do echo "export $env" >> /home/term/.bashrc ; done &&  node /opt/wetty/app.js -p $PORT
