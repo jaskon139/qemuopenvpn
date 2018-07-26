@@ -1,0 +1,42 @@
+{
+  "inbound": {
+    "port": 1080,
+    "protocol": "socks",
+    "domainOverride": ["tls","http"],
+    "settings": {
+      "auth": "noauth"
+    }
+  },
+  "outbound": {
+    "protocol": "vmess",
+    "settings": {
+      "vnext": [
+        {
+          "address": "serveraddr.com",
+          "port": 16823,
+          "users": [
+            {
+              "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
+              "alterId": 64
+            }
+          ]
+        }
+      ]
+    },
+    "streamSettings": {
+      "network": "mkcp",
+      "kcpSettings": {
+        "mtu": 1350,
+        "tti": 20,
+        "uplinkCapacity": 5,
+        "downlinkCapacity": 100,
+        "congestion": false,
+        "readBufferSize": 1,
+        "writeBufferSize": 1,
+        "header": {
+          "type": "none"
+        }
+      }
+    }
+  }
+}
