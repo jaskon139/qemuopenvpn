@@ -2,7 +2,7 @@ FROM centurylink/wetty-cli
 ADD . /app
 WORKDIR /app
 RUN apt-get update
-RUN apt-get install -y qemu git tmux software-properties-common python-software-properties module-init-tools wget p7zip
+RUN apt-get install -y qemu git tmux software-properties-common python-software-properties module-init-tools wget p7zip-full
 RUN add-apt-repository ppa:alessandro-strada/ppa
 RUN apt-get update && apt-get install -y google-drive-ocamlfuse fuse
 WORKDIR /app
