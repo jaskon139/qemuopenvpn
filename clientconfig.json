@@ -12,8 +12,8 @@
     "settings": {
       "vnext": [
         {
-          "address": "serveraddr.com",
-          "port": 16823,
+          "address": "127.0.0.1",
+          "port": 5388,
           "users": [
             {
               "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
@@ -22,21 +22,6 @@
           ]
         }
       ]
-    },
-    "streamSettings": {
-      "network": "mkcp",
-      "kcpSettings": {
-        "mtu": 1350,
-        "tti": 20,
-        "uplinkCapacity": 5,
-        "downlinkCapacity": 100,
-        "congestion": false,
-        "readBufferSize": 1,
-        "writeBufferSize": 1,
-        "header": {
-          "type": "none"
-        }
-      }
     }
   }
 }
