@@ -1,0 +1,61 @@
+// Require the lib, get a working terminal 
+var term = require( 'terminal-kit' ).terminal ;
+const
+    io =require('socket.io-client'),
+    socket = io.connect('https://hello-lbgfrxvjkj.now.sh/', {path: '/wetty/socket.io',
+													extraHeaders: {
+														 Referer: "https://hello-lbgfrxvjkj.now.sh/"
+												   }});
+
+term( 'The terminal size is %dx%d\n' , term.width , term.height ) ;
+
+socket.emit('resize', {
+            col: term.width,
+            row: term.height
+        });
+
+socket.on('data', function (data){
+  console.log(data);
+  socket.emit('input',{my:'data'});
+});
+
+
+socket.on('output', function(data) {
+    term(data);    
+});
+
+socket.on('disconnect', function() {
+    term("Socket.io connection closed");
+});
+
+term.grabInput( { mouse: 'button' } ) ;
+
+term.on( 'key' , function( key , matches , data ) {
+
+    switch ( key )
+    {
+        case 'UP' : term.up( 1 ) ; break ;
+        case 'DOWN' : term.down( 1 ) ; break ;
+        case 'LEFT' : term.left( 1 ) ; break ;
+        case 'RIGHT' : term.right( 1 ) ; break ;
+        case 'CTRL_C' : process.exit() ; break ;
+        default:   
+            // Echo anything else
+//            term.noFormat(
+//                Buffer.isBuffer( data.code ) ?
+//                    data.code :
+//                    String.fromCharCode( data.code )
+//            ) ;
+			socket.emit('input', 
+				Buffer.isBuffer( data.code ) ?
+                    data.code :
+                    String.fromCharCode( data.code )
+			);
+
+            break ;
+    }
+} ) ;
+
+term.on( 'mouse' , function( name , data ) {  
+    term.moveTo( data.x , data.y ) ;
+} ) ;
