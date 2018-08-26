@@ -5,7 +5,6 @@ RUN rm -fr /opt/wetty
 WORKDIR /opt/
 RUN wget https://nodejs.org/dist/v8.11.2/node-v8.11.2-linux-x64.tar.gz
 RUN tar xvf node-v8.11.2-linux-x64.tar.gz
-RUN node-v8.11.2-linux-x64/bin/npm install -g node-gyp
 RUN git clone https://github.com/krishnasrinivas/wetty.git
 RUN cd /opt/wetty && node-v8.11.2-linux-x64/bin/npm install  
 
