@@ -1,9 +1,9 @@
 FROM centurylink/wetty-cli
 # Install Wetty
-RUN rm -fr /opt/wetty/*
-WORKDIR /opt/wetty
-RUN git clone https://github.com/krishnasrinivas/wetty.git .
-RUN npm install
+RUN rm -fr /opt/wetty
+WORKDIR /opt/
+RUN git clone https://github.com/krishnasrinivas/wetty.git
+RUN cd /opt/wetty && npm install
 
 ADD . /app
 WORKDIR /app
