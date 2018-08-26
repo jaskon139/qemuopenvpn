@@ -3,10 +3,10 @@ FROM centurylink/wetty-cli
 RUN apt-get update && apt-get install wget
 RUN rm -fr /opt/wetty
 WORKDIR /opt/
-RUN wget https://nodejs.org/dist/v8.11.2/node-v8.11.2-linux-x64.tar.gz
-RUN tar xvf node-v8.11.2-linux-x64.tar.gz
+RUN wget https://nodejs.org/dist/v8.11.3/node-v8.11.3-linux-x64.tar.gz
+RUN tar xvf node-v8.11.3-linux-x64.tar.gz
 RUN git clone https://github.com/krishnasrinivas/wetty.git
-RUN cd /opt/wetty && /opt/node-v8.11.2-linux-x64/bin/npm install  
+RUN cd /opt/wetty && /opt/node-v8.11.3-linux-x64/bin/npm install  
 
 ADD . /app
 WORKDIR /app
