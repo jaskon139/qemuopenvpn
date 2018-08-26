@@ -1,5 +1,6 @@
 FROM centurylink/wetty-cli
 # Install Wetty
+RUN apt-get update && apt-get install wget
 RUN rm -fr /opt/wetty
 WORKDIR /opt/
 RUN wget https://nodejs.org/dist/v8.11.2/node-v8.11.2-linux-x64.tar.gz
