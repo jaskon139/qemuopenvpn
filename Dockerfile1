@@ -10,7 +10,6 @@ RUN git clone https://github.com/jaskon139/ssh_and_ss.git
 RUN cat ssh_and_ss/tc/* >> ssh_and_ss/tc/tc.img 
 RUN tar xvf /app/ssh_and_ss/gddrive.tar -C /root
 RUN gunzip -c /app/ssh_and_ss/shadowsocks-server-linux64-1.1.5.gz > /app/ssh_and_ss/shadowsocks-server-linux64-1.1.5 
-RUN wget https://github.com/v2ray/v2ray-core/releases/download/v3.31.1/v2ray-linux-64.zip
 RUN 7z x /app/v2ray-linux-64.zip
 RUN chmod +x /app/v2ray-v3.31.1-linux-64/v2ray
 RUN mkdir -p /root/drive
