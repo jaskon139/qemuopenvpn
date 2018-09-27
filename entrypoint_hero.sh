@@ -7,7 +7,7 @@ pkill server_linux_amd64
 pkill kcptunserver
 echo "---------------------------------------------"
 echo $resultip
-/app/v2ray-v3.31.1-linux-64/v2ray -config /app/ssconfig.json &
+/app/v2ray-v3.31-linux-64/v2ray -config /app/ssconfig.json &
 ./server_linux_amd64 -t 127.0.0.1:8388 -l :3824 --mode fast2& 
 #./kcptunserver 10.241.62.73 9999 $resultip $resultip 3824 &
 ./kcptunserver 10.241.62.73 9999 $resultip $resultip 3824 &
